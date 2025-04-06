@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edino Cultural - Largo da Ordem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            grid-template-rows: 120px 1fr 60px;
+            grid-template-areas:
+                "header sidebar"
+                "main sidebar"
+                "footer sidebar";
+            min-height: 100vh;
+        }
+        
+        header {
+            grid-area: header;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #ff5500;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff5500;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: #ff5500;
+        }
+        
+        .time-info {
+            text-align: right;
+        }
+        
+        .time-display {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .countdown {
+            font-size: 1rem;
+            color: #ff5500;
+        }
+        
+        main {
+            grid-area: main;
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #222;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff5500;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: #ff5500;
+            font-weight: bold;
+        }
+        
+        aside {
+            grid-area: sidebar;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        
+        .sidebar-title {
+            color: #ff5500;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #555;
+        }
+        
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .sidebar-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sidebar-links a:hover {
+            background-color: #ff5500;
+        }
+        
+        .sidebar-links i {
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            grid-area: footer;
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid #444;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Edino Cultural</div>
+        <nav class="nav-links">
+            <a href="#">Início</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+        <div class="time-info">
+            <div class="time-display" id="datetime"></div>
+            <div class="countdown" id="countdown">Próximo evento: Carregando...</div>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Bem-vindo ao Edino Cultural</h1>
+        <p>No coração do <span class="highlight">Largo da Ordem</span>, o Edino Cultural é o ponto de encontro perfeito para quem busca experiências memoráveis em Curitiba. Nossa casa combina mixologia premiada, gastronomia criativa e uma programação cultural vibrante.</p>
+        
+        <p>Toda <span class="highlight">quinta-feira</span> transformamos nosso espaço em palco para os melhores talentos da música curitibana, enquanto as <span class="highlight">sextas e sábados</span> são dedicados a festas temáticas que celebram desde o vintage até o contemporâneo.</p>
+        
+        <p>Nosso <span class="highlight">ambiente</span> preserva a arquitetura histórica do casarão centenário, harmonizada com design industrial e iluminação que cria atmosferas únicas para cada ocasião. Destaque para nossa varanda com vista para o calçadão histórico.</p>
+        
+        <p>O <span class="highlight">cardápio de drinks</span> homenageia a cultura paranaense, com destaques como o "Pinhão Smash" (bourbon, licor de pinhão torrado e bitter de erva-mate) e o "Barreado Sour" (cachaça envelhecida, caldo de barreado reduzido e limão cravo).</p>
+        
+        <p>Consulte nossa <span class="highlight">agenda</span> para programação completa, explore a <span class="highlight">galeria</span> para sentir nossa energia e conheça nosso <span class="highlight">cardápio</span> - incluindo opções vegetarianas e veganas.</p>
+    </main>
+    
+    <aside>
+        <h3 class="sidebar-title">Acesso Rápido</h3>
+        <div class="sidebar-links">
+            <a href="agenda.html">
+                <i class="fas fa-calendar-alt"></i>
+                Agenda Cultural
+            </a>
+            <a href="cardapio.html">
+                <i class="fas fa-utensils"></i>
+                Cardápio Completo
+            </a>
+            <a href="fotos.html">
+                <i class="fas fa-images"></i>
+                Galeria
+            </a>
+            <a href="reservas.html">
+                <i class="fas fa-bookmark"></i>
+                Reservas
+            </a>
+            <a href="happyhour.html">
+                <i class="fas fa-cocktail"></i>
+                Happy Hour
+            </a>
+        </div>
+        
+        <h3 class="sidebar-title" style="margin-top: 30px;">Destaque da Semana</h3>
+        <p style="font-size: 0.9rem; line-height: 1.4; margin-bottom: 15px;">
+            <span style="color: #ff5500; font-weight: bold;">Sexta Gótica</span><br>
+            Toda última sexta do mês: DJs, drinks temáticos e concurso de melhor look dark. Ingressos antecipados na recepção.
+        </p>
+        
+        <h3 class="sidebar-title" style="margin-top: 30px;">Horário de Funcionamento</h3>
+        <p style="font-size: 0.9rem;">
+            <i class="fas fa-clock" style="color: #ff5500;"></i> Ter-Qui: 17h-00h<br>
+            <i class="fas fa-clock" style="color: #ff5500;"></i> Sex-Sáb: 17h-02h<br>
+            <i class="fas fa-clock" style="color: #ff5500;"></i> Dom: Fechado
+        </p>
+        
+        <h3 class="sidebar-title" style="margin-top: 30px;">Localização</h3>
+        <p style="font-size: 0.9rem;">
+            <i class="fas fa-map-marker-alt" style="color: #ff5500;"></i> Rua São Francisco, 248<br>
+            Largo da Ordem - Centro<br>
+            Curitiba/PR
+        </p>
+    </aside>
+    
+    <footer>
+        <p>&copy; 2023 Edino Cultural Bar - Largo da Ordem | Curitiba/PR</p>
+    </footer>
+    
+    <script>
+        // Function to update date and time in PT-BR
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZone: 'America/Sao_Paulo'
+            };
+            document.getElementById('datetime').textContent = now.toLocaleDateString('pt-BR', options);
+        }
+        
+        // Countdown to next Friday 22:00 (typical Brazilian event time)
+        function updateCountdown() {
+            const now = new Date();
+            const nextEvent = new Date();
+            
+            // Set to next Friday 22:00
+            nextEvent.setDate(now.getDate() + (5 + 7 - now.getDay()) % 7);
+            nextEvent.setHours(22, 0, 0, 0);
+            
+            const diff = nextEvent - now;
+            
+            if (diff <= 0) {
+                document.getElementById('countdown').textContent = "Evento acontecendo agora!";
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('countdown').textContent = 
+                `Próxima Sexta Gótica: ${days}d ${hours}h ${minutes}m`;
+        }
+        
+        updateDateTime();
+        updateCountdown();
+        setInterval(updateDateTime, 1000);
+        setInterval(updateCountdown, 60000);
+    </script>
+</body>
+</html>
